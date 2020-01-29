@@ -4,11 +4,17 @@ import java.time.temporal.ChronoUnit;
 
 import static java.util.Calendar.YEAR;
 
+enum Gender{
+    MALE,
+    FEMALE,
+    OTHERS
+}
 public class EmployeeDetails {
 
     private int employeeId;
     private String firstName;
     private String lastName;
+    private Gender gender;
     private LocalDate dateOfBirth;
     private long ageInYears;
     private String designation;
@@ -18,10 +24,11 @@ public class EmployeeDetails {
     private double boostedSalary;
     private String remarks;
 
-    public EmployeeDetails(int employeeId, String firstName, String lastName, LocalDate dateOfBirth, String designation, String department, int hoursWorked, double salary) {
+    public EmployeeDetails(int employeeId, String firstName, String lastName, Gender gender, LocalDate dateOfBirth, String designation, String department, int hoursWorked, double salary) {
         this.employeeId = employeeId;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.gender = gender;
         this.dateOfBirth = dateOfBirth;
         this.ageInYears = calculateAge();
         this.designation = designation;
@@ -100,6 +107,7 @@ public class EmployeeDetails {
        System.out.println("Employee ID:" + this.employeeId);
         System.out.println("First Name: " + this.firstName);
         System.out.println("Last Name: " + this.lastName);
+        System.out.println("Gender: " + this.gender);
         System.out.println("Date of Birth: " + this.dateOfBirth);
         System.out.println("Age: " + this.ageInYears);
         System.out.println("Designation:" + this.designation);
