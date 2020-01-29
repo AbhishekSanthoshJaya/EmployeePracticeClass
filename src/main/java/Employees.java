@@ -10,13 +10,15 @@ public class Employees {
         listOfEmployees[0] = e1;
     EmployeeDetails e2 = new EmployeeDetails(13,"Pope","Francis", Gender.FEMALE, LocalDate.of(1976, 04, 18),"Junior Engineer","IT",12, 24);
         listOfEmployees[1] = e2;
-
-    for(EmployeeDetails e : listOfEmployees) {
-        e.printData();
+        String FirstName = e1. getFirstName();
+        String newLastName = e1.setLastName("The Rock Johnson");
+        e1.printData();
+    /*for(EmployeeDetails e : listOfEmployees) {
+        //e.printData();
         System.out.println("");
         System.out.println("**********************************************************************************");
-    }
+    */}
     }
 
 
-}
+

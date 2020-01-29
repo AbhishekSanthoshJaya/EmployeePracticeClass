@@ -50,8 +50,9 @@ public class EmployeeDetails {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        lastName = lastName;
+    public String setLastName(String lastName) {
+        this.lastName = lastName;
+        return lastName;
     }
 
     public LocalDate getDateOfBirth() {
