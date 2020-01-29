@@ -91,21 +91,20 @@ public class EmployeeDetails {
         //this.salary = salary;
     }
 
-    public long calculateAge(){
-        long age = this.dateOfBirth.until(LocalDate.now(), ChronoUnit. YEARS);
+    public long calculateAge() {
+        long age = this.dateOfBirth.until(LocalDate.now(), ChronoUnit.YEARS);
         return age;
     }
 
-    public double getBonus(){
-        if (hoursWorked > 30){
+    public double getBonus() {
+        if (hoursWorked > 30) {
             return (this.salary * 1.2);
-        }
-        else
-        return this.salary;
+        } else
+            return this.salary;
     }
 
     public void printData() {
-       System.out.println("Employee ID:" + this.employeeId);
+        System.out.println("Employee ID:" + this.employeeId);
         System.out.println("First Name: " + this.firstName);
         System.out.println("Last Name: " + this.lastName);
         System.out.println("Gender: " + this.gender);
@@ -116,14 +115,27 @@ public class EmployeeDetails {
         System.out.println("Hours Worked:" + this.hoursWorked);
         System.out.println("Salary:" + salary);
         System.out.println("Boosted Salary:" + this.boostedSalary);
-        if(this.hoursWorked > 35){
+        if (this.hoursWorked > 35) {
             this.remarks = "Hard Worker";
             System.out.println("Additional Remarks: " + this.remarks);
-        }
-        else
-        { this.remarks = "Average Worker";
+        } else {
+            this.remarks = "Average Worker";
             System.out.println("Additional Remarks: " + this.remarks);
         }
+    }
+
+    public int[] targetSum(int[] nums, int target) throws IllegalArgumentException {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[j] == target - nums[i]) {
+                    return new int[]{i, j};
+                }
+                else if (nums[i] + nums[j] != target && i ==nums.length-1){
+                    System.out.println("No solution");
+                }
+            }
+        }
+        throw new IllegalArgumentException("No two sum solution");
     }
 }
 
